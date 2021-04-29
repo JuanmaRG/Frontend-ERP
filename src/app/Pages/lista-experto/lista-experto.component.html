@@ -1,0 +1,53 @@
+<div>
+    <table>
+        <tr>
+            <td><input name="filtroNombre" [(ngModel)]="buscarPorNombre" placeholder="Buscar por nombre" (keyup)="requestNameFilter()"></td>
+            <td>
+                <select name="select" [(ngModel)]="buscarPorEstado" (click)="requestStateFilter()">
+          <option value="">Cualquiera</option>
+          <option value="1">Validado</option>
+          <option value="2" selected>Pendiente</option>
+          <option value="3">Descartado</option>
+        </select>
+            </td>
+            <td><input name="filtroEtiqueta" [(ngModel)]="buscarPorEtiqueta" placeholder="Buscar por etiqueta" (keyup)="requestTagFilter()"></td>
+            <td><input name="filtroPuntuacion" placeholder="Buscar por puntuacion"></td>
+        </tr>
+    </table>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> NOMBRE EXPERTO </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> ESTADO </th>
+        <td mat-cell *matCellDef="let element"> {{element.estado.valor}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="tagList">
+        <th mat-header-cell *matHeaderCellDef> ETIQUETAS </th>
+        <td mat-cell *matCellDef="let element">
+            <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+                <mat-chip class="example-box" cdkDrag *ngFor="let x of element.tagList"> {{ x.nombre }} </mat-chip>
+            </mat-chip-list>
+        </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="puntuacion">
+        <th mat-header-cell *matHeaderCellDef> VALORACION </th>
+        <td mat-cell *matCellDef="let element"> 90 </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
