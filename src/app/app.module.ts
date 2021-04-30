@@ -24,6 +24,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
+import { AddExpertoComponent } from './components/add-experto/add-experto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import {MatCardModule} from '@angular/material/card';
     AddEtiquetaComponent,
     LogInComponent,
     RegisterComponent,
+    AddExpertoComponent,
 
   ],
   imports: [

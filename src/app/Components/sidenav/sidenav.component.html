@@ -7,11 +7,11 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
+        <mat-toolbar class="colorVerde">
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-            <span>Frontend-ERP</span>
+            <span>Aplicacion ERP </span>
         </mat-toolbar>
         <router-outlet></router-outlet>
     </mat-sidenav-content>

@@ -26,5 +26,8 @@ export class ExpertoService {
     return this.httpClient.get<any>('https://backend-erp-jmrg.herokuapp.com/api/expertos?etiquetas='+tag);
   }
 
+  createExperto(experto: any):Observable<any>{
+    return this.httpClient.post('https://backend-erp-jmrg.herokuapp.com/api/expertos',experto);
+  }
 
 }

@@ -6,14 +6,14 @@ export class Tag implements Itag{
   nombre: String;
   createdAt: Date;
   updateAt: Date;
-  expertoList: Experto[];
+  expertoList:any []=[];
 
-  constructor(id: number, nombre: String, createdAt: Date,  updateAt: Date, expertoList: Experto[]){
-    this.id = id;
+  constructor( nombre: String, createdAt: Date,  updateAt: Date){
+
     this.nombre = nombre;
     this.createdAt = createdAt;
     this.updateAt = updateAt;
-    this.expertoList = expertoList;
+
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AddExpertoComponent } from 'src/app/components/add-experto/add-experto.component';
 import { ExpertoService } from 'src/app/Servicios/ExpertoServicio/experto.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-lista-experto',
@@ -19,7 +21,7 @@ export class ListaExpertoComponent implements OnInit {
   buscarPorEstado: String = ""
   buscarPorEtiqueta: String = ""
 
-  constructor( private expertoService: ExpertoService ) { }
+  constructor( private expertoService: ExpertoService, public dialog: MatDialog ) { }
 
 
   ngOnInit(): void {
@@ -53,4 +55,21 @@ requestTagFilter(){
     });
 
 }
+
+openDialog(){
+  this.dialog.open(AddExpertoComponent);
+}
+/*
+getColor(): string {
+  switch (this.e) {
+    case 1:
+      return '#EF4816';
+    case 2:
+      return '#EA631F';
+    case 3:
+      return '#EEAE38';
+    default:
+      return '#57B9B0';
+  }
+}*/
 }

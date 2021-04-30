@@ -1,0 +1,55 @@
+<div class="col-md-6">
+  <div class="panel-body">
+    <h1><small>Nuevo Experto</small></h1>
+
+<form name="formularioReg" class="form-horizontal" ng-submit="formularioReg.$valid && filtro.addRegistro(filtro.registro)" novalidate>
+<fieldset class="form-group">
+<input type="text" name="nombre" [(ngModel)]="nombre" class="form-control" placeholder="Escriba su nombre" title="Nombre:" required/>
+
+</fieldset>
+<fieldset class="form-group">
+<input type="text" name ="nif"  class="form-control" placeholder="Escriba su NIF" title="NIF:" required/>
+</fieldset>
+<fieldset class="form-group">
+  <section>
+    <label for="workStatus">Etiquetas</label>
+      <select name="dataSource" [(ngModel)]="etiquetasSeccion" >
+      <option *ngFor="let status of dataSource" [value]="status.nombre">
+        {{ status.nombre }}
+      </option>
+    </select>
+  </section>
+</fieldset>
+<fieldset class="form-group">
+  <section>
+    <label for="workStatus">Disponibilidad</label>
+      <select name="workStatus" [(ngModel)]="disponibilidad">
+      <option *ngFor="let status of workStatuses" [value]="status.id">
+        <span>{{ status.description }}</span>
+      </option>
+    </select>
+  </section>
+</fieldset>
+
+<fieldset class="form-group">
+<input type="number" name="tel" [(ngModel)]="contacto_telefono" class="form-control" placeholder="Escriba su telefono" title="Telefono" required/>
+</fieldset>
+<fieldset class="form-group">
+  <input type="email" name="email" [(ngModel)]="contacto_email" class="form-control" placeholder="Escriba su email" title="Email" required/>
+</fieldset>
+<fieldset class="form-group">
+  <input type="email" name ="Linkedin" [(ngModel)]="contacto_linkedin" class="form-control" placeholder="introduzca el enlace al perfil" title="NIF:" required/>
+</fieldset>
+
+<section>
+
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="createExperto()">Crear nuevo experto</button>
+  </div>
+</section>
+
+</form>
+
+</div>
+</div>
+
